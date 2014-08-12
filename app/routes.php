@@ -13,5 +13,11 @@
 
 Route::get('/', function()
 {
-	return View::make('index');
+	return View::make('hello');
 });
+
+Route::get('/products/{product}',array('as'=>'product', function($product)
+{
+    $date['product'] = $product ;
+    return View::make('index',$date);
+}));

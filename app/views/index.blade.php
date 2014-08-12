@@ -12,10 +12,8 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="assets/css/normalize.css">
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
+        {{ HTML::style('assets/css/bootstrap.min.css') }}
+        {{ HTML::script('assets/js/vendor/modernizr-2.6.2.min.js') }}
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -23,12 +21,24 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        {{ Form::open(array('url' => '/')) }}
+        {{ Form::label('email', 'E-Mail') }}
+        {{ Form::email('email', null, array('placeholder'=>'youremail@example.com')) }}
+
+        {{ Form::label('subject', 'Subject') }}
+        {{ Form::text('subject', null, array('placeholder' =>  $product  )) }}
+
+        {{ Form::label('message', 'Message') }}
+        {{ Form::textarea('message') }}
+
+        {{ Form::submit('Send Message') }}
+        {{ Form::close() }}
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script>window.jQuery || document.write('{{ HTML::script('assets/js/vendor/jquery.min.js') }}')</script>
+        {{ HTML::script('assets/js/plugins.js') }}
+        {{ HTML::script('assets/js/main.js') }}
 
     {{--
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
