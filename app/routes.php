@@ -35,5 +35,18 @@ Route::post('products/{product}/inquiry', array('as'=>'inquiry','before'=>'csrf'
     $inquiry->save();
 
 
-}
-));
+}));
+
+//登陆系统
+Route::get('login', function(){
+    return View::make('login');
+});
+Route::post('login', function(){
+    if(Auth::attempt(Input::only('username', 'password'))) {
+        return Redirect::intended('/');
+    } else {
+        return Redirect::back()
+            ->withInput()
+            ->with('error', "Invalid credentials");
+    }
+});
