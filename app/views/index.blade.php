@@ -21,7 +21,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        {{ Form::open(array('url' => '/')) }}
+        {{ Form::open(array('url' => $url )) }}
         {{ Form::label('email', 'E-Mail') }}
         {{ Form::email('email', null, array('placeholder'=>'youremail@example.com')) }}
 
@@ -36,7 +36,7 @@
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('{{ HTML::script('assets/js/vendor/jquery.min.js') }}')</script>
+        <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
         {{ HTML::script('assets/js/plugins.js') }}
         {{ HTML::script('assets/js/main.js') }}
 
