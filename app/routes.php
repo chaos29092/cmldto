@@ -11,42 +11,51 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Route::get('/', function () {
+    return View::make('hello');
 });
 
-Route::get('/products/{product}',array('as'=>'product', function($product)
-{
+Route::get('/products/{product}', array('as' => 'product', function ($product) {
     $url = URL::current();
-    $date['product'] = $product ;
-    $date['url'] = $url.'/inquiry' ;
-    return View::make('index',$date);
+    $date['product'] = $product;
+    $date['url'] = $url . '/inquiry';
+    return View::make('index', $date);
 }));
 
-Route::post('products/{product}/inquiry', array('as'=>'inquiry','before'=>'csrf',function($product)
-{
-    $date = input::all() ;
-    $inquiry = new Inquiry ;
-    $inquiry->email = $date['email'] ;
-    $inquiry->subject = $date['subject'] ;
-    $inquiry->message = $date['message'] ;
-    $inquiry->product = $product ;
+Route::post('products/{product}/inquiry', array('as' => 'inquiry', 'before' => 'csrf', function ($product) {
+    $date = input::all();
+    $inquiry = new Inquiry;
+    $inquiry->email = $date['email'];
+    $inquiry->subject = $date['subject'];
+    $inquiry->message = $date['message'];
+    $inquiry->product = $product;
     $inquiry->save();
 
 
 }));
 
 //登陆系统
-Route::get('login', function(){
+Route::get('login', function () {
     return View::make('login');
 });
-Route::post('login', function(){
-    if(Auth::attempt(Input::only('username', 'password'))) {
-        return Redirect::intended('/');
+Route::post('login', array('before' => 'csrf', function () {
+    if (Auth::attempt(Input::only('username', 'password'))) {
+        return Redirect::intended('inquiry');
     } else {
         return Redirect::back()
             ->withInput()
             ->with('error', "Invalid credentials");
     }
+}));
+Route::get('logout', function(){
+    Auth::logout();
+    return Redirect::to('/')
+        ->with('message', 'You are now logged out');
+});
+
+//只有登录后可以看到的页面
+Route::group(array('before'=>'auth'), function(){
+    Route::get('inquiry', function() {
+        return View::make('inquiry');
+    });
 });
