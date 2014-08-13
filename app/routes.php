@@ -49,13 +49,14 @@ Route::post('login', array('before' => 'csrf', function () {
 }));
 Route::get('logout', function(){
     Auth::logout();
-    return Redirect::to('/')
+    return Redirect::to('login')
         ->with('message', 'You are now logged out');
 });
 
 //只有登录后可以看到的页面
 Route::group(array('before'=>'auth'), function(){
     Route::get('inquiry', function() {
-        return View::make('inquiry');
+        $date['inquiry'] = Inquiry::all();
+        return View::make('inquiry', $date);
     });
 });
