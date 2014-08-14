@@ -1,0 +1,13 @@
+.jumbotron {
+    background: url("../../img/background.jpg") no-repeat center top;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#head {
+    margin-top: 50px;
+}
+#head .btn-group-lg>.btn {
+    font-size: 28px;
+}
