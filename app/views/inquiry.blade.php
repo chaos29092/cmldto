@@ -9,16 +9,19 @@
         <th>Subject</th>
         <th>Message</th>
         <th>Product</th>
+        <th>Date</th>
     </tr>
-@foreach($inquiry as $inquiry)
+@foreach($inquirys as $inquiry)
 <tr>
     <td>{{ $inquiry->id }}</td>
     <td>{{ $inquiry->email }}</td>
     <td>{{ $inquiry->subject }}</td>
     <td>{{ $inquiry->message }}</td>
     <td>{{ $inquiry->product }}</td>
+    <td>{{ $inquiry->created_at }}</td>
 </tr>
 @endforeach
-</table>
 
+</table>
+{{ $inquirys->links(); }}
 @stop
