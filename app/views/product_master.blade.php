@@ -24,14 +24,32 @@
 
         <div class="jumbotron">
             <div class="container">
-                <img src="" alt=""/>
+                <div class="row">
+                <div class="media col-md-8">
+                    <a class="pull-left" href="#">
+                        <img src="{{asset('img/logo.png');}}" alt="Camellia" class="media-object"/>
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">CAMELLIA</h4>
+                        El fabricante de equipos de belleza profesional
+                    </div>
+                </div>
+                <a class="col-md-4" href="#">
+                    <img src="{{asset('img/logo.png');}}" alt="Camellia" class="pull-right"/>
+                </a>
+
+                </div>
+
+
+
+
 
             <h1>Hello, world!</h1>
             <p>...</p>
             <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
             </div>
         </div>
-        <
+
 
         {{-- 联系表格开始 --}}
         {{ Form::open(array('url' => $url, 'class' => 'form-horizontal', 'role' => 'form' )) }}

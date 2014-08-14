@@ -55,6 +55,7 @@ Route::get('logout', function(){
 
 //只有登录后可以看到的页面
 Route::group(array('before'=>'auth'), function(){
+    //询盘数据页面
     Route::get('inquiry', function() {
         $date['inquirys'] = Inquiry::where('id','>', 0)->orderBy('id','desc')->paginate(2);
         return View::make('inquiry', $date);
