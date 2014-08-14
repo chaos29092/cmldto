@@ -19,7 +19,7 @@ Route::get('/products/{product}', array('as' => 'product', function ($product) {
     $url = URL::current();
     $date['product'] = $product;
     $date['url'] = $url . '/inquiry';
-    return View::make('index', $date);
+    return View::make('product_master', $date);
 }));
 
 Route::post('products/{product}/inquiry', array('as' => 'inquiry', 'before' => 'csrf', function ($product) {
@@ -60,3 +60,4 @@ Route::group(array('before'=>'auth'), function(){
         return View::make('inquiry', $date);
     });
 });
+

@@ -21,18 +21,47 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        {{ Form::open(array('url' => $url )) }}
-        {{ Form::label('email', 'E-Mail') }}
-        {{ Form::email('email', null, array('placeholder'=>'youremail@example.com')) }}
 
-        {{ Form::label('subject', 'Subject') }}
-        {{ Form::text('subject', null, array('placeholder' =>  $product  )) }}
+        <div class="jumbotron">
+            <div class="container">
+                <img src="" alt=""/>
 
-        {{ Form::label('message', 'Message') }}
-        {{ Form::textarea('message') }}
+            <h1>Hello, world!</h1>
+            <p>...</p>
+            <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+            </div>
+        </div>
+        <
 
-        {{ Form::submit('Send Message') }}
+        {{-- 联系表格开始 --}}
+        {{ Form::open(array('url' => $url, 'class' => 'form-horizontal', 'role' => 'form' )) }}
+        <div class="form-group">
+        {{ Form::label('email', 'E-Mail', array('class' => 'col-sm-2 control-label')) }}
+        <div class="col-sm-3">
+        {{ Form::email('email', null, array('placeholder'=>'youremail@example.com', 'class' => 'form-control')) }}
+        </div>
+        </div>
+
+        <div class="form-group">
+        {{ Form::label('subject', 'Subject', array('class' => 'col-sm-2 control-label')) }}
+        <div class="col-sm-3">
+        {{ Form::text('subject', null, array('placeholder' =>  $product, 'class' => 'form-control')) }}
+        </div>
+        </div>
+
+        <div class="form-group">
+        {{ Form::label('message', 'Message', array('class' => 'col-sm-2 control-label')) }}
+        <div class="col-sm-3">
+        {{ Form::textarea('message', null, array('class' => 'form-control', 'rows' => '5')) }}
+        </div></div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+        {{ Form::submit('Send Message', array('class' => 'btn btn-default')) }}
+            </div>
+        </div>
         {{ Form::close() }}
+        {{-- 联系表格结束 --}}
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
