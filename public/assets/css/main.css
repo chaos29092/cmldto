@@ -2,12 +2,29 @@
     background: url("../../img/background.jpg") no-repeat center top;
     background-attachment: fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
     background-size: cover;
+    margin-bottom: 0;
 }
 
 #head {
     margin-top: 50px;
 }
-#head .btn-group-lg>.btn {
+
+#head .btn-group-lg > .btn {
     font-size: 28px;
+}
+
+.certificado > p {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.certificado {
+    background: #f1f1f1;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
 }

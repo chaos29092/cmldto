@@ -27,7 +27,7 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-{{-- 页头 --}}
+{{-- 页头开始 --}}
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -71,8 +71,13 @@
 
     </div>
 </div>
-{{-- yetou end --}}
+{{-- 页头结束 --}}
 
+{{-- 证书开始 --}}
+<div class="certificado">
+    <p class="text-center"><img src="{{asset('img/certificado.png')}}" alt="Certificado"/></p>
+</div>
+{{-- 证书结束 --}}
 
 {{-- 联系表格开始 --}}
 <div class="container">
