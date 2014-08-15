@@ -17,6 +17,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     {{ HTML::style('assets/css/bootstrap.min.css') }}
+    {{ HTML::style('assets/css/lightbox.css') }}
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::script('assets/js/vendor/modernizr-2.6.2.min.js') }}
 </head>
@@ -64,7 +65,9 @@
                     <button type="button" class="btn btn-danger"> € 1400.00</button>
                     <button type="button" class="btn btn-danger"> Contáctenos</button>
                 </div>
-                <p><small>Promo Only en septiembre y octubre.</small></p>
+                <p>
+                    <small>Promo Only en septiembre y octubre.</small>
+                </p>
             </div>
         </div>
 
@@ -78,6 +81,91 @@
     <p class="text-center"><img src="{{asset('img/certificado.png')}}" alt="Certificado"/></p>
 </div>
 {{-- 证书结束 --}}
+
+{{-- 产品功能开始 --}}
+<div class="container" id="app">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="text-center"><img src="{{asset('img\product\305\IPL_1.jpg')}}" alt="IPL machine"/></p>
+        </div>
+        <div class="col-md-6">
+            <h2>Aplicaciones</h2>
+
+            <p><em>El tratamiento de depilación láser puede hacer que un amplio espectro de luz pulsada intensa a través
+                    de
+                    una pequeña pieza de mano, suave.</em></p>
+            <ol>
+                <li><p>Quitar las manchas: eliminar las pecas, quemaduras del sol ,placas seniles ,melasmas y otras
+                        variedades de lesiones pigmentadas;</p>
+                </li>
+                <li><p>Depilación:miembros,axilas,línea de pelo ,Bikini y los vellos no deseados ,ect..</p></li>
+                <li><p>Eliminar de arrugas:pata de gallo,patrón de cuello, estría,etc..</p></li>
+                <li><p>Terapia vascular,rosácea,eritema,ect..</p></li>
+                <li><p>Reducir los poros dilatos efectivamente ,eliminar o aliviar las cicatrices de acné;</p></li>
+                <li><p>Aumentar el colá geno de la piel,recuperar y aumentar la elasticidad de la piel;</p></li>
+                <li><p>Rejuvenecer la piel:blanquear la piel de cualquier parte del cuerpo.</p></li>
+            </ol>
+        </div>
+    </div>
+</div>
+<hr/>
+{{-- 产品功能结束 --}}
+
+{{-- 产品优势开始 --}}
+<div class="container" id="advantage">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Advantage</h2>
+
+            <p><em>¿Por qué comprar IPL de nosotros.</em></p>
+            <ol>
+                <li>
+                    <p>Seguridad en las clínicas: Onda de oro puro - el filtro patentado para eliminar la luz dañina, no
+                        hay efectos secundarios;</p>
+                </li>
+                <li>
+                    <p>Efficacy: puede terminar con éxito muchos de los problemas de los distintos tipos de piel;</p>
+                </li>
+                <li>
+                    <p>proceso Cómodo: sistema de refrigeración eficaz, ajustable de 0 C ~ - 7C, hace que el tratamiento
+                        sea más cómodo;</p>
+                </li>
+                <li>
+                    <p>Fácil manejo: Excelente diseño, control del microordenador, fácil de operar;</p>
+                </li>
+                <li>
+                    <p>Altamente rentable, Promoción de verano, € 1400! Promo Only en septiembre y octubre.</p>
+                </li>
+            </ol>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="{{asset('img/product/305/c1.jpg')}}" data-lightbox="image-1" data-title="My caption" class="pull-right"><img
+                            src="{{asset('img/product/305/c1.jpg')}}" class="example-image" alt=""/></a>
+                </div>
+                <div class="col-md-6">
+                    <a href="{{asset('img/product/305/c1.jpg')}}" data-lightbox="image-1" data-title="My caption"><img
+                            src="{{asset('img/product/305/c1.jpg')}}" class="example-image" alt=""/></a>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="{{asset('img/product/305/c1.jpg')}}" data-lightbox="image-1" data-title="My caption" class="pull-right"><img
+                            src="{{asset('img/product/305/c1.jpg')}}" class="example-image" alt=""/></a>
+                </div>
+                <div class="col-md-6">
+                    <a href="{{asset('img/product/305/c1.jpg')}}" data-lightbox="image-1" data-title="My caption"><img
+                            src="{{asset('img/product/305/c1.jpg')}}" class="example-image" alt=""/></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<hr/>
+{{-- 产品优势结束 --}}
 
 {{-- 联系表格开始 --}}
 <div class="container">
@@ -115,8 +203,10 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
+{{-- {{ HTML::script('assets/js/vendor/bootstrap.min.js') }} --}}
 {{ HTML::script('assets/js/plugins.js') }}
 {{ HTML::script('assets/js/main.js') }}
+{{ HTML::script('assets/js/vendor/lightbox.min.js') }}
 
 {{--
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

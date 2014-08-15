@@ -28,3 +28,15 @@
     -moz-background-size: cover;
     background-size: cover;
 }
+
+#app {
+    margin-top: 50px;
+}
+#advantage {
+    margin-top: 50px;
+}
+
+.example-image {
+    width: 20rem;
+    border-radius: 5px;
+}
