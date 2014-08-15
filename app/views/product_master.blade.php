@@ -309,27 +309,50 @@
 </div>
 {{-- 客户夸奖结束 --}}
 
+{{--客户经理开始--}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <p class="text-center"><img src="{{asset('img\author.jpg')}}" alt="Elena" class="img-circle"/></p>
+        </div>
+        <div class="col-md-5">
+            <h2>Palabras del Camellia</h2>
+            <p>hola, soy administrador de clientes, Elena.</p>
+            <p>Queremos hacer más socios de negocios de todo el mundo, así que estábamos locos promociones.</p>
+            <p>Promo Only en septiembre y octubre~.</p>
+            <p>No te pierdas esta oportunidad, queremos ser tu amigo.</p>
+            <p>Por favor, póngase en contacto con nosotros tan pronto como sea posible.</p>
+            <p>Esperamos su mensaje!</p>
+        </div>
+        <div class="col-md-5">
+            <p class="text-center"><img src="{{asset('img\product\305\IPL_2.jpg')}}" alt=""/></p>
+        </div>
+    </div>
+</div>
+{{--客户经理结束--}}
+
 {{-- 联系表格开始 --}}
+<div id="contact">
 <div class="container">
     {{ Form::open(array('url' => $url, 'class' => 'form-horizontal', 'role' => 'form' )) }}
     <div class="form-group">
         {{ Form::label('email', 'E-Mail', array('class' => 'col-sm-2 control-label')) }}
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             {{ Form::email('email', null, array('placeholder'=>'youremail@example.com', 'class' => 'form-control')) }}
         </div>
     </div>
 
     <div class="form-group">
         {{ Form::label('subject', 'Subject', array('class' => 'col-sm-2 control-label')) }}
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             {{ Form::text('subject', null, array('placeholder' => $product, 'class' => 'form-control')) }}
         </div>
     </div>
 
     <div class="form-group">
         {{ Form::label('message', 'Message', array('class' => 'col-sm-2 control-label')) }}
-        <div class="col-sm-3">
-            {{ Form::textarea('message', null, array('class' => 'form-control', 'rows' => '5')) }}
+        <div class="col-sm-6">
+            {{ Form::textarea('message', null, array('class' => 'form-control', 'rows' => '8')) }}
         </div>
     </div>
 
@@ -340,8 +363,25 @@
     </div>
     {{ Form::close() }}
 </div>
+</div>
 {{-- 联系表格结束 --}}
 
+{{--footer开始--}}
+<div class="container" id="footer">
+    <div class="col-md-6">
+
+        <ul class="list-inline">
+            <li><a href="#">Indice</a></li>
+            <li><a href="#">Promociones</a></li>
+
+        </ul>
+
+    </div>
+    <div class="col-md-6">
+        <p>© Fuera de la Camellia Promoción Página 2014. Reservados todos los derechos.</p>
+    </div>
+</div>
+{{--footer结束--}}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
@@ -369,5 +409,6 @@
     ga('send', 'pageview');
 </script>
 --}}
+
 </body>
 </html>
