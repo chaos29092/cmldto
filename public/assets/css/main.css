@@ -45,9 +45,9 @@
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
 }
-#contact>.container {
-    margin-top: 5rem;
-}
+/*#contact>.container {*/
+    /*margin-top: 5rem;*/
+/*}*/
 #footer {
     padding-top: 1rem;
 }

@@ -334,6 +334,9 @@
 {{-- 联系表格开始 --}}
 <div id="contact">
 <div class="container">
+    <div class="col-md-offset-1">
+        <h2>Contáctenos</h2>
+    </div>
     {{ Form::open(array('url' => $url, 'class' => 'form-horizontal', 'role' => 'form' )) }}
     <div class="form-group">
         {{ Form::label('email', 'E-Mail', array('class' => 'col-sm-2 control-label')) }}
