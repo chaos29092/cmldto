@@ -30,8 +30,7 @@ Route::post('products/{product}/inquiry', array('as' => 'inquiry', 'before' => '
     $inquiry->message = $date['message'];
     $inquiry->product = $product;
     $inquiry->save();
-
-
+    return Redirect::back()->with('message', 'Message Send Successfully! We will contact you as soon as possible.');
 }));
 
 //登陆系统
@@ -57,7 +56,7 @@ Route::get('logout', function(){
 Route::group(array('before'=>'auth'), function(){
     //询盘数据页面
     Route::get('inquiry', function() {
-        $date['inquirys'] = Inquiry::where('id','>', 0)->orderBy('id','desc')->paginate(2);
+        $date['inquirys'] = Inquiry::where('id','>', 0)->orderBy('id','desc')->paginate(30);
         return View::make('inquiry', $date);
     });
 });

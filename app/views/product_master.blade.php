@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link href='http://fonts.googleapis.com/css?family=Dosis:500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dosis:500|Droid+Sans' rel='stylesheet' type='text/css'>
     {{ HTML::style('assets/css/bootstrap.min.css') }}
     {{ HTML::style('assets/css/lightbox.css') }}
     {{ HTML::style('assets/css/main.css') }}
@@ -51,7 +51,6 @@
                 </div>
             </div>
         </div>
-
 
         <div class="row" id="head">
             <div class="col-md-6">
