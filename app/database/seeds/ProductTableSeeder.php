@@ -5,9 +5,9 @@ class ProductTableSeeder extends Seeder
 
     public function run()
     {
-
+        for ($x=0; $x<=10; $x++){
         Product::create(array(
-            'name' => 'CML-305',
+            'name' => 'CML-305_'.$x,
             'is_discount' => 1,
             'category' => 'IPL',
             'mainphoto' => 'img\product\305\IPL.png',
@@ -78,7 +78,7 @@ class ProductTableSeeder extends Seeder
             <p>Esperamos su mensaje!</p>'),
             'footerphoto' => 'img\product\305\IPL_2.jpg'
         ));
-
+        }
     }
 
 }

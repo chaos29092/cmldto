@@ -1,5 +1,5 @@
 @extends('master')
-@section('header')<h2>Inquiry</h2>@stop
+@section('header')<h2>Inquiries</h2>@stop
 @section('content')
 
 <table class="table-striped table">
@@ -11,7 +11,7 @@
         <th>Product</th>
         <th>Date</th>
     </tr>
-@foreach($inquirys as $inquiry)
+@foreach($inquiries as $inquiry)
 <tr>
     <td>{{ $inquiry->id }}</td>
     <td>{{ $inquiry->email }}</td>
@@ -23,5 +23,5 @@
 @endforeach
 
 </table>
-{{ $inquirys->links(); }}
+{{ $inquiries->links(); }}
 @stop

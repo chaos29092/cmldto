@@ -35,11 +35,11 @@ Route::post('products/{product}/inquiry', array('as' => 'inquiry', 'before' => '
 
 //登陆系统
 Route::get('login', function () {
-    return View::make('login');
+    return View::make('admin.login');
 });
 Route::post('login', array('before' => 'csrf', function () {
     if (Auth::attempt(Input::only('username', 'password'))) {
-        return Redirect::intended('inquiry');
+        return Redirect::intended('admin/inquiries');
     } else {
         return Redirect::back()
             ->withInput()
@@ -55,9 +55,9 @@ Route::get('logout', function(){
 //只有登录后可以看到的页面
 Route::group(array('before'=>'auth'), function(){
     //询盘数据页面
-    Route::get('inquiry', function() {
-        $date['inquirys'] = Inquiry::where('id','>', 0)->orderBy('id','desc')->paginate(30);
-        return View::make('inquiry', $date);
+    Route::get('admin/inquiries', function() {
+        $date['inquiries'] = Inquiry::where('id','>', 0)->orderBy('id','desc')->paginate(30);
+        return View::make('admin.inquiries', $date);
     });
 });
 

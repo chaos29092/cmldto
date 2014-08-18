@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInquirys extends Migration {
+class CreateInquiries extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateInquirys extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('inquirys', function($table)
+		Schema::create('inquiries', function($table)
         {
             $table->increments('id');
             $table->string('email');
@@ -30,7 +30,7 @@ class CreateInquirys extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('inquirys');
+        Schema::drop('inquiries');
 	}
 
 }
