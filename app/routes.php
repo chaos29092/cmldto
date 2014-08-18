@@ -59,5 +59,10 @@ Route::group(array('before'=>'auth'), function(){
         $date['inquiries'] = Inquiry::where('id','>', 0)->orderBy('id','desc')->paginate(30);
         return View::make('admin.inquiries', $date);
     });
+    //产品列表页
+    Route::get('admin/products', function() {
+        $date['products'] = Product::where('id','>', 0)->paginate(5);
+        return View::make('admin.products', $date);
+    });
 });
 
