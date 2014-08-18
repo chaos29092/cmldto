@@ -21,10 +21,10 @@
         <td>{{ $product->name }}</td>
         <td>{{ $product->is_discount }}</td>
         <td>{{ $product->updated_at }}</td>
-        <td><a href="{{asset('admin/products/.$product->id./edit')}}">
+        <td><a href="{{asset('admin/products/'.$product->id.'/edit')}}">
                 <button type="button" class="btn btn-primary">Edit</button>
             </a>
-            <a href="{{asset('admin/products/.$product->id./delete')}}">
+            <a href="{{asset('admin/products/'.$product->id.'/delete')}}">
                 <button type="button" class="btn btn-danger">Delete</button>
             </a>
         </td>

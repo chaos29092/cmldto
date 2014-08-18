@@ -460,7 +460,7 @@
         <div class="form-group">
             {{ Form::label('subject', 'Subject', array('class' => 'col-sm-2 control-label')) }}
             <div class="col-sm-4">
-                {{ Form::text('subject', null, array('placeholder' => $product, 'class' => 'form-control')) }}
+                {{ Form::text('subject', null, array('placeholder' => $product->name, 'class' => 'form-control')) }}
             </div>
         </div>
 

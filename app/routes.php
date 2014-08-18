@@ -54,6 +54,7 @@ Route::get('logout', function(){
 
 //只有登录后可以看到的页面
 Route::group(array('before'=>'auth'), function(){
+    Route::model('product', 'Product');
     //询盘数据页面
     Route::get('admin/inquiries', function() {
         $date['inquiries'] = Inquiry::where('id','>', 0)->orderBy('id','desc')->paginate(30);
@@ -64,5 +65,20 @@ Route::group(array('before'=>'auth'), function(){
         $date['products'] = Product::where('id','>', 0)->paginate(5);
         return View::make('admin.products', $date);
     });
+    //产品创建
+
+    //产品修改
+    Route::get('admin/products/{product}/edit', function(Product $product){
+        return View::make('admin.product_edit')->with('product',$product);
+    });
+    Route::put('admin/products/{product}', array('before' => 'csrf' , function(Product $product){
+        $date = Input::file('mainphoto');
+        $name = $date->getClientOriginalName();
+        $date->move('img/product', $name) ;
+        $mainp = 'img/product/'.$name ;
+        $product->update(array('mainphoto' => $mainp));
+        return Redirect::back()
+            ->with('message', 'Successfully updated product!');
+    }));
 });
 
