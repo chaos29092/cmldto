@@ -72,11 +72,16 @@ Route::group(array('before'=>'auth'), function(){
         return View::make('admin.product_edit')->with('product',$product);
     });
     Route::put('admin/products/{product}', array('before' => 'csrf' , function(Product $product){
+        //保存图片路径
         $date = Input::file('mainphoto');
+        if($date){
         $name = $date->getClientOriginalName();
-        $date->move('img/product', $name) ;
-        $mainp = 'img/product/'.$name ;
+        $date->move('img/product/'.$product->name, $name) ;
+        $mainp = 'img/product/'.$product->name.'/'.$name ;
         $product->update(array('mainphoto' => $mainp));
+        }
+        $all = Input::except('mainphoto');
+        $product->update($all);
         return Redirect::back()
             ->with('message', 'Successfully updated product!');
     }));
