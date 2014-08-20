@@ -10,80 +10,37 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::model('product', 'Product');
 
 Route::get('/', function () {
     return View::make('hello');
 });
 
-Route::get('/products/{product}', array('as' => 'product', function ($product) {
-    $url = URL::current();
-    $date['product'] = $product;
-    $date['url'] = $url . '/inquiry';
-    return View::make('product_master', $date);
-}));
+//discount product page
+Route::get('/products/{product}', array('as' => 'product', 'uses' => 'ProductController@dicountPage'));
 
-Route::post('products/{product}/inquiry', array('as' => 'inquiry', 'before' => 'csrf', function ($product) {
-    $date = input::all();
-    $inquiry = new Inquiry;
-    $inquiry->email = $date['email'];
-    $inquiry->subject = $date['subject'];
-    $inquiry->message = $date['message'];
-    $inquiry->product = $product;
-    $inquiry->save();
-    return Redirect::back()->with('message', 'Message Send Successfully! We will contact you as soon as possible.');
-}));
+//inquiry store
+Route::post('products/{product}/inquiry', array('as' => 'inquiry', 'before' => 'csrf', 'uses' => 'InquiryController@store'));
 
 //登陆系统
 Route::get('login', function () {
     return View::make('admin.login');
 });
-Route::post('login', array('before' => 'csrf', function () {
-    if (Auth::attempt(Input::only('username', 'password'))) {
-        return Redirect::intended('admin/inquiries');
-    } else {
-        return Redirect::back()
-            ->withInput()
-            ->with('error', "Invalid credentials");
-    }
-}));
-Route::get('logout', function(){
-    Auth::logout();
-    return Redirect::to('login')
-        ->with('message', 'You are now logged out');
-});
+Route::post('login', array('before' => 'csrf', 'uses' => 'UserController@postLogin'));
+Route::get('logout', 'UserController@loginOut');
 
 //只有登录后可以看到的页面
-Route::group(array('before'=>'auth'), function(){
-    Route::model('product', 'Product');
+Route::group(array('before' => 'auth'), function () {
     //询盘数据页面
-    Route::get('admin/inquiries', function() {
-        $date['inquiries'] = Inquiry::where('id','>', 0)->orderBy('id','desc')->paginate(30);
-        return View::make('admin.inquiries', $date);
-    });
+    Route::get('admin/inquiries', 'InquiryController@index');
     //产品列表页
-    Route::get('admin/products', function() {
-        $date['products'] = Product::where('id','>', 0)->paginate(5);
-        return View::make('admin.products', $date);
-    });
+    Route::get('admin/products', 'ProductController@listAll');
     //产品创建
 
     //产品修改
-    Route::get('admin/products/{product}/edit', function(Product $product){
-        return View::make('admin.product_edit')->with('product',$product);
-    });
-    Route::put('admin/products/{product}', array('before' => 'csrf' , function(Product $product){
-        //保存图片路径
-        $date = Input::file('mainphoto');
-        if($date){
-        $name = $date->getClientOriginalName();
-        $date->move('img/product/'.$product->name, $name) ;
-        $mainp = 'img/product/'.$product->name.'/'.$name ;
-        $product->update(array('mainphoto' => $mainp));
-        }
-        $all = Input::except('mainphoto');
-        $product->update($all);
-        return Redirect::back()
-            ->with('message', 'Successfully updated product!');
-    }));
+    Route::get('admin/products/{product}/edit', 'ProductController@getEdit');
+    Route::put('admin/products/{product}', array('before' => 'csrf', 'uses' => 'ProductController@putEdit'));
+
+    //产品删除
 });
 
