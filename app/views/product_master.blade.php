@@ -36,6 +36,9 @@
 @endif
 {{--message结束--}}
 
+{{--点击到顶部箭头--}}
+<a href="#top" id="top-button" title="Top"><i class="glyphicon glyphicon-arrow-up"></i></a>
+
 {{-- 页头开始 --}}
 <div class="jumbotron">
     <div class="container">

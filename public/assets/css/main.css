@@ -57,15 +57,24 @@ h1,h2,h3,h4 {
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
 }
-/*#contact>.container {*/
-    /*margin-top: 5rem;*/
-/*}*/
+
 #footer {
     padding-top: 1rem;
 }
 
 #alertmessage {
     margin-bottom: 0;
+}
+
+#top-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid #5d5d5d;
+    border-radius: 3px;
+    display: block;
+    padding: 10px;
+    color: #404040;
 }
 
 /*客户夸奖*/
