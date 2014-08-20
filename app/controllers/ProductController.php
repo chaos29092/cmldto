@@ -17,6 +17,22 @@ class ProductController extends BaseController {
             return View::make('admin.products', $date);
     }
 
+    //create product
+    public function getCreate()
+    {
+        $product = new Product;
+        return View::make('admin.product_create')
+            ->with('product', $product)
+            ->with('method', 'post');
+    }
+    public function create($product)
+    {
+        $product = Product::update(Input::except('mainphoto'));
+        return Redirect::to('admin/products/'.$product->id.'/edit')
+            ->with('message', 'Successfully created product!');
+
+    }
+
     //edit product
     public function getEdit (Product $product)
     {
@@ -32,9 +48,10 @@ class ProductController extends BaseController {
             $mainp = 'img/product/'.$product->name.'/'.$name ;
             $product->update(array('mainphoto' => $mainp));
         }
-        $all = Input::except('mainphoto');
-        $product->update($all);
+        $product->update(Input::except('mainphoto'));
         return Redirect::back()
             ->with('message', 'Successfully updated product!');
     }
+
+
 }

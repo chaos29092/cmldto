@@ -33,14 +33,20 @@ Route::get('logout', 'UserController@loginOut');
 Route::group(array('before' => 'auth'), function () {
     //询盘数据页面
     Route::get('admin/inquiries', 'InquiryController@index');
+
     //产品列表页
     Route::get('admin/products', 'ProductController@listAll');
+
     //产品创建
+    Route::get('admin/products/create', 'ProductController@getCreate');
+    Route::post('admin/products/{product}', array('before' => 'csrf' , 'uses'=>'ProductController@create'));
 
     //产品修改
     Route::get('admin/products/{product}/edit', 'ProductController@getEdit');
     Route::put('admin/products/{product}', array('before' => 'csrf', 'uses' => 'ProductController@putEdit'));
 
     //产品删除
+    Route::get('admin/products/{product}/delete', 'ProductController@getDelete');
+    Route::delete('admin/products/{product}', 'ProductController@delete');
 });
 
