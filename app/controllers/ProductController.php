@@ -25,12 +25,11 @@ class ProductController extends BaseController {
             ->with('product', $product)
             ->with('method', 'post');
     }
-    public function create($product)
+    public function create()
     {
-        $product = Product::update(Input::except('mainphoto'));
+        $product = Product::create(Input::except('mainphoto'));
         return Redirect::to('admin/products/'.$product->id.'/edit')
             ->with('message', 'Successfully created product!');
-
     }
 
     //edit product

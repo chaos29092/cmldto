@@ -39,7 +39,7 @@ Route::group(array('before' => 'auth'), function () {
 
     //产品创建
     Route::get('admin/products/create', 'ProductController@getCreate');
-    Route::post('admin/products/{product}', array('before' => 'csrf' , 'uses'=>'ProductController@create'));
+    Route::post('admin/products/create', array('before' => 'csrf' , 'uses'=>'ProductController@create'));
 
     //产品修改
     Route::get('admin/products/{product}/edit', 'ProductController@getEdit');
