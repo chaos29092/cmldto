@@ -22,8 +22,7 @@ class ProductController extends BaseController {
     {
         $product = new Product;
         return View::make('admin.product_create')
-            ->with('product', $product)
-            ->with('method', 'post');
+            ->with('product', $product);
     }
     public function create()
     {
@@ -52,5 +51,18 @@ class ProductController extends BaseController {
             ->with('message', 'Successfully updated product!');
     }
 
+    //delete product
+    public function getDelete(Product $product)
+    {
+        return View::make('admin.product_delete')
+            ->with('product',$product);
+    }
+
+    public function delete(Product $product)
+    {
+        $product->delete();
+        return Redirect::to('admin/products')
+            ->with('message','Successfully deleted product!');
+    }
 
 }

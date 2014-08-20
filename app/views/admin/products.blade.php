@@ -9,7 +9,6 @@
 
 <table class="table-striped table">
     <tr>
-        <th>Id</th>
         <th>Name</th>
         <th>Is_discount</th>
         <th>Modified</th>
@@ -17,7 +16,6 @@
     </tr>
     @foreach($products as $product)
     <tr>
-        <td>{{ $product->id }}</td>
         <td>{{ $product->name }}</td>
         <td>{{ $product->is_discount }}</td>
         <td>{{ $product->updated_at }}</td>
