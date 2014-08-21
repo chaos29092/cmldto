@@ -20,6 +20,17 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{asset('admin/inquiries')}}">询盘列表</a></li>
+                        <li class="active"><a href="{{asset('admin/products')}}">产品列表</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <!-- Add your site or application content here -->
         <div class="container">
             <div class="page-header">
