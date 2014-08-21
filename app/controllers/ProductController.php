@@ -13,7 +13,7 @@ class ProductController extends BaseController {
     //product list
     public function listAll()
     {
-        $date['products'] = Product::where('id','>', 0)->paginate(5);
+        $date['products'] = Product::where('id','>', 0)->orderBy('id','desc')->paginate(20);
             return View::make('admin.products', $date);
     }
 
@@ -26,9 +26,21 @@ class ProductController extends BaseController {
     }
     public function create()
     {
+        $rule = array('name'=>'required');
+        $validator = Validator::make(Input::except('mainphoto'),$rule);
+
+        if ($validator->passes())
+        {
+        mkdir('img/product/'.Input::get('name'));
         $product = Product::create(Input::except('mainphoto'));
         return Redirect::to('admin/products/'.$product->id.'/edit')
             ->with('message', 'Successfully created product!');
+        }
+        else
+        {
+            return Redirect::back()
+                ->with('message','产品name必须填写！');
+        }
     }
 
     //edit product
@@ -38,15 +50,22 @@ class ProductController extends BaseController {
     }
 
     public  function putEdit (Product $product) {
-        //保存图片路径
+        //保存mainphoto图片路径，默认路径为img/product/$product->name，并且在修改了name后也修改相应文件夹名称
         $date = Input::file('mainphoto');
-        if($date){
-            $name = $date->getClientOriginalName();
-            $date->move('img/product/'.$product->name, $name) ;
-            $mainp = 'img/product/'.$product->name.'/'.$name ;
-            $product->update(array('mainphoto' => $mainp));
+        $name = Input::get('name');
+        if($name){
+            //if name be edit,then modify img folder.
+            rename('img/product/'.$product->name,'img/product/'.$name);
+            if($date)
+            {
+                $fileName = $date->getClientOriginalName();
+                $date->move('img/product/'.$name, $fileName) ;
+                $product->update(array('mainphoto'=> $fileName));
+            }
         }
-        $product->update(Input::except('mainphoto'));
+
+        //update all date except image.
+        $product->update(Input::except(array('mainphoto')));
         return Redirect::back()
             ->with('message', 'Successfully updated product!');
     }

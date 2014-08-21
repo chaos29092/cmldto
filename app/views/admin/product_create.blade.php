@@ -9,7 +9,7 @@
 {{--name--}}
 <div class="form-group">
     <label for="name">Name</label>
-    <input name="name" type="text" class="form-control" id="name" >
+    <input name="name" type="text" class="form-control" id="name">
 </div>
 
 {{--主图--}}

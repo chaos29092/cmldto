@@ -18,7 +18,7 @@
     <input name="mainphoto" type="file" id="mainphoto">
     <p class="help-block">
         @if($product->mainphoto)
-        <img src="{{asset($product->mainphoto)}}" width="72" height="auto" alt=""/>
+        <img src="{{asset('img/product/'.$product->name.'/'.$product->mainphoto)}}" width="72" height="auto" alt=""/>
         @endif
     </p>
 </div>
