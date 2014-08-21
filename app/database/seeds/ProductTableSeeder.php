@@ -10,7 +10,7 @@ class ProductTableSeeder extends Seeder
             'name' => 'CML-305_'.$x,
             'is_discount' => 1,
             'category' => 'IPL',
-            'mainphoto' => 'img\product\305\IPL.png',
+            'mainphoto' => 'girl.jpg',
             'introduction' => e('<h1>Máquina IPL 70% DTO!</h1>
                 <p>Máquina IPL Promoción de verano, € 1400! Venta de la fábrica, 120% calidad!</p>
                 <p>
@@ -27,7 +27,7 @@ class ProductTableSeeder extends Seeder
                 <p>
                     <small>Promo Only en septiembre y octubre.</small>
                 </p>'),
-            'appphoto' => 'img\product\305\IPL_1.jpg',
+            'appphoto' => 'girl.jpg',
             'app' => '<h2>Aplicaciones</h2>
 
             <p><em>El tratamiento de depilación láser puede hacer que un amplio espectro de luz pulsada intensa a través
@@ -65,10 +65,10 @@ class ProductTableSeeder extends Seeder
                     <p>Altamente rentable, Promoción de verano, € 1400! Promo Only en septiembre y octubre.</p>
                 </li>
             </ol>'),
-            'adphoto_1' => 'img\product\305\c1.jpg',
-            'adphoto_2' => 'img\product\305\c2.jpg',
-            'adphoto_3' => 'img\product\305\c3.jpg',
-            'adphoto_4' => 'img\product\305\c4.jpg',
+            'adphoto_1' => 'girl.jpg',
+            'adphoto_2' => 'girl.jpg',
+            'adphoto_3' => 'girl.jpg',
+            'adphoto_4' => 'girl.jpg',
             'tocustomer' => e('<h2>Palabras del Camellia</h2>
             <p>hola, soy administrador de clientes, Elena.</p>
             <p>Queremos hacer más socios de negocios de todo el mundo, así que estábamos locos promociones.</p>
@@ -76,7 +76,7 @@ class ProductTableSeeder extends Seeder
             <p>No te pierdas esta oportunidad, queremos ser tu amigo.</p>
             <p>Por favor, póngase en contacto con nosotros tan pronto como sea posible.</p>
             <p>Esperamos su mensaje!</p>'),
-            'footerphoto' => 'img\product\305\IPL_2.jpg'
+            'footerphoto' => 'girl.jpg'
         ));
         }
     }
