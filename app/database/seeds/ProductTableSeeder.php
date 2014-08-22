@@ -11,7 +11,7 @@ class ProductTableSeeder extends Seeder
             'is_discount' => 1,
             'category' => 'IPL',
             'mainphoto' => 'girl.jpg',
-            'introduction' => e('<h1>Máquina IPL 70% DTO!</h1>
+            'introduction' => '<h1>Máquina IPL 70% DTO!</h1>
                 <p>Máquina IPL Promoción de verano, € 1400! Venta de la fábrica, 120% calidad!</p>
                 <p>
                     <small>Somos una fabrica profesional de máquina estética en China, Ahora, hay una gran promoción en
@@ -26,7 +26,7 @@ class ProductTableSeeder extends Seeder
                 </div>
                 <p>
                     <small>Promo Only en septiembre y octubre.</small>
-                </p>'),
+                </p>',
             'appphoto' => 'girl.jpg',
             'app' => '<h2>Aplicaciones</h2>
 
@@ -44,7 +44,7 @@ class ProductTableSeeder extends Seeder
                 <li><p>Aumentar el colá geno de la piel,recuperar y aumentar la elasticidad de la piel;</p></li>
                 <li><p>Rejuvenecer la piel:blanquear la piel de cualquier parte del cuerpo.</p></li>
             </ol>',
-            'advantage' => e('<h2>Advantage</h2>
+            'advantage' => '<h2>Advantage</h2>
             <p><em>¿Por qué comprar IPL de nosotros.</em></p>
             <ol>
                 <li>
@@ -64,18 +64,18 @@ class ProductTableSeeder extends Seeder
                 <li>
                     <p>Altamente rentable, Promoción de verano, € 1400! Promo Only en septiembre y octubre.</p>
                 </li>
-            </ol>'),
+            </ol>',
             'adphoto_1' => 'girl.jpg',
             'adphoto_2' => 'girl.jpg',
             'adphoto_3' => 'girl.jpg',
             'adphoto_4' => 'girl.jpg',
-            'tocustomer' => e('<h2>Palabras del Camellia</h2>
+            'tocustomer' => '<h2>Palabras del Camellia</h2>
             <p>hola, soy administrador de clientes, Elena.</p>
             <p>Queremos hacer más socios de negocios de todo el mundo, así que estábamos locos promociones.</p>
             <p>Promo Only en septiembre y octubre~.</p>
             <p>No te pierdas esta oportunidad, queremos ser tu amigo.</p>
             <p>Por favor, póngase en contacto con nosotros tan pronto como sea posible.</p>
-            <p>Esperamos su mensaje!</p>'),
+            <p>Esperamos su mensaje!</p>',
             'footerphoto' => 'girl.jpg'
         ));
         }

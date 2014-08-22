@@ -29,7 +29,7 @@ Route::get('login', function () {
 Route::post('login', array('before' => 'csrf', 'uses' => 'UserController@postLogin'));
 Route::get('logout', 'UserController@loginOut');
 
-//只有登录后可以看到的页面
+//登录后可以看到的页面
 Route::group(array('before' => 'auth'), function () {
     //询盘数据页面
     Route::get('admin/inquiries', 'InquiryController@index');
@@ -49,4 +49,3 @@ Route::group(array('before' => 'auth'), function () {
     Route::get('admin/products/{product}/delete', 'ProductController@getDelete');
     Route::delete('admin/products/{product}', 'ProductController@delete');
 });
-
