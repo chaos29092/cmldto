@@ -1,7 +1,7 @@
 body {
     font-family: 'Droid Sans', Arial, Verdana, sans-serif;
     color: #404040;
-    background-color: #e8e8e8;
+    background-color: #fcfcfc;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -323,7 +323,7 @@ a {
 }
 
 #nav .navbar-default {
-    background-color: #e8e8e8;
+    background-color: #fcfcfc;
     margin-bottom: 0;
     border: none;
 }
