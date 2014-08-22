@@ -22,11 +22,19 @@
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse col-md-6">
                     <ul class="nav navbar-nav">
                         <li><a href="{{asset('admin/inquiries')}}">询盘列表</a></li>
-                        <li class="active"><a href="{{asset('admin/products')}}">产品列表</a></li>
+                        <li><a href="{{asset('admin/products')}}">产品列表</a></li>
                     </ul>
+                </div>
+                <div class="col-md-6">
+                    @if(Auth::check())
+                    <p class="navbar-text navbar-right">Logged in as <strong>{{{Auth::user()->username}}}</strong>
+                    <button class="btn btn-default">{{link_to('logout', 'Log Out')}}</button></p>
+                    @else
+                    {{link_to('login', 'Log In')}}
+                    @endif
                 </div>
             </div>
         </nav>
@@ -34,15 +42,7 @@
         <!-- Add your site or application content here -->
         <div class="container">
             <div class="page-header">
-                <div class="text-right">
-                    @if(Auth::check())
-                    Logged in as
-                    <strong>{{{Auth::user()->username}}}</strong>
-                    {{link_to('logout', 'Log Out')}}
-                    @else
-                    {{link_to('login', 'Log In')}}
-                    @endif
-                </div>
+
                 @yield('header')
             </div>
             @if(Session::has('message'))

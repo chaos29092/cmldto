@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 @section('header')
 <h2>Products</h2>
 <a href="{{asset('admin/products/create')}}">

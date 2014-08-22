@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 @section('header')
 <h2>Product Delete</h2>
 @stop

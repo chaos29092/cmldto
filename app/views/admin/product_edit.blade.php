@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 @section('header')
 <h2>Product Edit</h2>
 @stop
