@@ -44,7 +44,7 @@
     <div class="container">
         <div class="row">
             <div class="media col-md-8">
-                <a class="pull-left" href="#">
+                <a class="pull-left" href="/">
                     <img src="{{asset('img/logo.png')}}" alt="Camellia" class="media-object"/>
                 </a>
 

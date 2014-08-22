@@ -14,7 +14,7 @@
 
 {{--主图--}}
 <div class="form-group">
-    <label for="mainphoto">页幕主图</label>
+    <label for="mainphoto">页幕主图,要求背景透明，500宽</label>
     <input name="mainphoto" type="file" id="mainphoto">
 </div>
 
