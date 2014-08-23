@@ -78,7 +78,6 @@ class ProductTableSeeder extends Seeder
             <p>Esperamos su mensaje!</p>',
             'footerphoto' => 'girl.jpg',
             'indexphoto' => 'girl.jpg',
-            'price' => '$ 1399',
             'mrg' => 'tuomao | quban | meibai',
             'miniintro' => 'this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction',
             'fnt' => 'Suitable for clinics, beauty salons',

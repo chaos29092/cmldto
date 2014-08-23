@@ -29,7 +29,6 @@ class CreateProducts extends Migration {
             $table->text('tocustomer');
             $table->string('footerphoto');
             $table->string('indexphoto');
-            $table->string('price',64);
             $table->string('mrg');
             $table->string('miniintro');
             $table->string('fnt');

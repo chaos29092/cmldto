@@ -24,6 +24,7 @@
             <div class="container">
                 <div class="collapse navbar-collapse col-md-6">
                     <ul class="nav navbar-nav">
+                        <li><a href="{{asset('/')}}">主页</a></li>
                         <li><a href="{{asset('admin/inquiries')}}">询盘列表</a></li>
                         <li><a href="{{asset('admin/products')}}">产品列表</a></li>
                     </ul>
