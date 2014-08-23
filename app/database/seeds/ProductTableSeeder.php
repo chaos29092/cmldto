@@ -76,7 +76,13 @@ class ProductTableSeeder extends Seeder
             <p>No te pierdas esta oportunidad, queremos ser tu amigo.</p>
             <p>Por favor, póngase en contacto con nosotros tan pronto como sea posible.</p>
             <p>Esperamos su mensaje!</p>',
-            'footerphoto' => 'girl.jpg'
+            'footerphoto' => 'girl.jpg',
+            'indexphoto' => 'girl.jpg',
+            'price' => '$ 1399',
+            'mrg' => 'tuomao | quban | meibai',
+            'miniintro' => 'this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction',
+            'fnt' => 'Suitable for clinics, beauty salons',
+            'style' => 'Vertical'
         ));
         }
     }

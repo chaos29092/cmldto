@@ -32,7 +32,7 @@ class ProductController extends BaseController {
         if ($validator->passes())
         {
             mkdir('img/product/'.Input::get('name'));
-            $product = Product::create(Input::except(array('mainphoto','appphoto','adphoto_1','adphoto_2','adphoto_3','adphoto_4','footerphoto')));
+            $product = Product::create(Input::except(array('mainphoto','appphoto','adphoto_1','adphoto_2','adphoto_3','adphoto_4','footerphoto','indexphoto')));
             //需要上传的图片
             if(Input::hasFile('mainphoto'))
             {
@@ -76,6 +76,12 @@ class ProductController extends BaseController {
                 Input::file('footerphoto')->move('img/product/'.Input::get('name'),$fileName);
                 $product->update(array('footerphoto'=> $fileName));
             }
+            if(Input::hasFile('indexphoto'))
+            {
+                $fileName = Input::file('indexphoto')->getClientOriginalName();
+                Input::file('indexphoto')->move('img/product/'.Input::get('name'),$fileName);
+                $product->update(array('indexphoto'=> $fileName));
+            }
 
         return Redirect::to('admin/products/'.$product->id.'/edit')
             ->with('message', 'Successfully created product!');
@@ -102,6 +108,7 @@ class ProductController extends BaseController {
         $adphoto_3 = Input::file('adphoto_3');
         $adphoto_4 = Input::file('adphoto_4');
         $footerphoto = Input::file('footerphoto');
+        $indexphoto = Input::file('indexphoto');
         $name = Input::get('name');
         if($name or $mainphoto or $appphoto or $adphoto_1 or $adphoto_2 or $adphoto_3 or $adphoto_4 or $footerphoto){
             //if name be edit,then modify img folder.
@@ -152,10 +159,16 @@ class ProductController extends BaseController {
                 $footerphoto->move('img/product/'.$name, $fileName) ;
                 $product->update(array('footerphoto'=> $fileName));
             }
+            if($indexphoto)
+            {
+                $fileName = $indexphoto->getClientOriginalName();
+                $indexphoto->move('img/product/'.$name, $fileName) ;
+                $product->update(array('indexphoto'=> $fileName));
+            }
         }
 
         //update all date except image.
-        $product->update(Input::except(array('mainphoto','appphoto','adphoto_1','adphoto_2','adphoto_3','adphoto_4','footerphoto')));
+        $product->update(Input::except(array('mainphoto','appphoto','adphoto_1','adphoto_2','adphoto_3','adphoto_4','footerphoto','indexphoto')));
         return Redirect::back()
             ->with('message', 'Successfully updated product!');
     }

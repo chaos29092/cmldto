@@ -110,6 +110,47 @@
     </p>
 </div>
 
+{{--indexphoto--}}
+<div class="form-group">
+    <label for="indexphoto">首页产品缩略图，180X135</label>
+    <input name="indexphoto" type="file" id="indexphoto">
+    <p class="help-block">
+        @if($product->indexphoto)
+        <img src="{{asset('img/product/'.$product->name.'/'.$product->indexphoto)}}" width="72" height="auto"/>
+        @endif
+    </p>
+</div>
+
+{{--price---}}
+<div class="form-group">
+    <label for="price">价格</label>
+    <input name="price" type="text" class="form-control" id="price" value="{{$product->price}}">
+</div>
+
+{{--mrg---}}
+<div class="form-group">
+    <label for="mrg">主要功能，以 | 来分隔</label>
+    <input name="mrg" type="text" class="form-control" id="mrg" value="{{$product->mrg}}">
+</div>
+
+{{--miniintro---}}
+<div class="form-group">
+    <label for="miniintro">简介</label>
+    <textarea name="miniintro" class="form-control" id="miniintro" rows="4">{{$product->miniintro}}</textarea>
+</div>
+
+{{--fnt---}}
+<div class="form-group">
+    <label for="fnt">适用于诊所，美容院等，也可以写一些自己想写的</label>
+    <input name="fnt" type="text" class="form-control" id="fnt" value="{{$product->fnt}}">
+</div>
+
+{{--style---}}
+<div class="form-group">
+    <label for="style">立式or台式</label>
+    <input name="style" type="text" class="form-control" id="style" value="{{$product->style}}">
+</div>
+
 {{Form::submit('Ok', array('class' => 'btn btn-default'))}}
 <a href="{{asset('admin/products')}}">
     <button type="button" class="btn btn-danger">Cancel</button>
