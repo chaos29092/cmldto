@@ -78,7 +78,7 @@ class ProductTableSeeder extends Seeder
             <p>Esperamos su mensaje!</p>',
             'footerphoto' => 'girl.jpg',
             'indexphoto' => 'girl.jpg',
-            'mrg' => 'tuomao | quban | meibai',
+            'mrg' => '<li>4,820 SqFt</li><li style="list-style: none">|</li><li>5 Beds</li><li style="list-style: none">|</li><li>5 Baths</li>',
             'miniintro' => 'this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction, this is a mini introduction',
             'fnt' => 'Suitable for clinics, beauty salons',
             'style' => 'Vertical'

@@ -130,7 +130,7 @@
 {{--mrg---}}
 <div class="form-group">
     <label for="mrg">主要功能，以 | 来分隔</label>
-    <input name="mrg" type="text" class="form-control" id="mrg" value="{{$product->mrg}}">
+    <textarea name="mrg" class="form-control" id="mrg" rows="3">{{$product->mrg}}</textarea>
 </div>
 
 {{--miniintro---}}

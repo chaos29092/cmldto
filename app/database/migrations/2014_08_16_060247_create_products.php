@@ -16,7 +16,7 @@ class CreateProducts extends Migration {
             $table->increments('id');
             $table->string('name');
             $table->boolean('is_discount');
-            $table->string('category');
+            $table->enum('category',array('E-Light','Nd-Yag Laser','IPL','Diode Laser','CO2 Laser Fractional','RF','Lipolaser','Cavitacion','Cryolipolysis','Multifunction'));
             $table->string('mainphoto');
             $table->text('introduction');
             $table->string('appphoto');
