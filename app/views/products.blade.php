@@ -166,8 +166,8 @@
     <div class="container container-pad" id="property-listings">
         <div class="row">
             <div class="col-md-12">
-                <h1>All Products</h1>
-                <p>All Products of Camellia list</p>
+                <h1>All {{$category}}</h1>
+                <p>All {{$category}} list</p>
             </div>
         </div>
         <div class="row">

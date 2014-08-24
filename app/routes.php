@@ -18,9 +18,11 @@ Route::get('/', function () {
 });
 
 //product page
-Route::get('/products/{product}', array('as' => 'product', 'uses' => 'ProductController@dicountPage'));
+Route::get('products/{product}', array('as' => 'product', 'uses' => 'ProductController@dicountPage'));
 //all product
-Route::get('products',array('uses'=>'ProductController@all'));
+Route::get('products', 'ProductController@all');
+//products category
+Route::get('products/category/{category}','ProductController@category');
 
 //inquiry store
 Route::post('products/{product}/inquiry', array('as' => 'inquiry', 'before' => 'csrf', 'uses' => 'InquiryController@store'));

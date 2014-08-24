@@ -14,6 +14,15 @@ class ProductController extends BaseController {
     public function all()
     {
         $date['products'] = Product::orderBy('id','desc')->paginate(20,array('id','category','name','indexphoto','mrg','miniintro','fnt','style'));
+        $date['category'] = 'Products';
+        return View::make('products',$date);
+    }
+
+    //products categoty
+    public  function category($category)
+    {
+        $date['products'] = Product::where('category','=',$category)->orderBy('id','desc')->get(array('id','category','name','indexphoto','mrg','miniintro','fnt','style'));
+        $date['category'] = $category;
         return View::make('products',$date);
     }
 
