@@ -26,6 +26,14 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
+{{--message开始--}}
+@if(Session::has('message'))
+<div class="alert alert-success" id="alertmessage">
+    <p class="text-center">{{Session::get('message')}}</p>
+</div>
+@endif
+{{--message结束--}}
+
 {{--Mega menu begin--}}
 <div id="nav" class="container">
     <nav class="navbar navbar-default">
@@ -238,6 +246,45 @@
     </div>
 </div>
 {{--Product list end--}}
+
+{{-- 联系表格开始 --}}
+<div id="contact">
+    <div class="container">
+        <div class="col-md-offset-1">
+            <h2>Contáctenos</h2>
+        </div>
+        {{ Form::open(array('url' => 'products/inquiry', 'class' => 'form-horizontal', 'role' => 'form' )) }}
+        <div class="form-group">
+            {{ Form::label('email', 'E-Mail', array('class' => 'col-sm-2 control-label')) }}
+            <div class="col-sm-4">
+                {{ Form::email('email', null, array('placeholder'=>'youremail@example.com', 'class' => 'form-control'))
+                }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ Form::label('subject', 'Subject', array('class' => 'col-sm-2 control-label')) }}
+            <div class="col-sm-4">
+                {{ Form::text('subject', null, array('placeholder' => 'which product', 'class' => 'form-control')) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ Form::label('message', 'Message', array('class' => 'col-sm-2 control-label')) }}
+            <div class="col-sm-6">
+                {{ Form::textarea('message', null, array('class' => 'form-control', 'rows' => '8')) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                {{ Form::submit('Send Message', array('class' => 'btn btn-default')) }}
+            </div>
+        </div>
+        {{ Form::close() }}
+    </div>
+</div>
+{{-- 联系表格结束 --}}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
