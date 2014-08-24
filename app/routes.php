@@ -17,8 +17,10 @@ Route::get('/', function () {
     return View::make('index',$date);
 });
 
-//discount product page
+//product page
 Route::get('/products/{product}', array('as' => 'product', 'uses' => 'ProductController@dicountPage'));
+//all product
+Route::get('products',array('uses'=>'ProductController@all'));
 
 //inquiry store
 Route::post('products/{product}/inquiry', array('as' => 'inquiry', 'before' => 'csrf', 'uses' => 'InquiryController@store'));

@@ -10,7 +10,14 @@ class ProductController extends BaseController {
         return View::make('product_master', $date);
     }
 
-    //product list
+    //products list
+    public function all()
+    {
+        $date['products'] = Product::orderBy('id','desc')->paginate(20,array('id','category','name','indexphoto','mrg','miniintro','fnt','style'));
+        return View::make('products',$date);
+    }
+
+    //admin products list
     public function listAll()
     {
         $date['products'] = Product::where('id','>', 0)->orderBy('id','desc')->paginate(20);
@@ -27,7 +34,7 @@ class ProductController extends BaseController {
     public function create()
     {
         $rule = array('name'=>'required');
-        $validator = Validator::make(Input::except('mainphoto'),$rule);
+        $validator = Validator::make(Input::except(array('mainphoto','appphoto','adphoto_1','adphoto_2','adphoto_3','adphoto_4','footerphoto','indexphoto')),$rule);
 
         if ($validator->passes())
         {
