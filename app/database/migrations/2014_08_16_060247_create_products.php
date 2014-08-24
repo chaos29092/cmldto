@@ -15,7 +15,7 @@ class CreateProducts extends Migration {
 		Schema::create('products',function($table){
             $table->increments('id');
             $table->string('name');
-            $table->boolean('is_discount');
+            $table->boolean('is_discount')->default(1);
             $table->enum('category',array('Uncategorized','E-Light','Nd-Yag Laser','IPL','Diode Laser','CO2 Laser Fractional','RF','Lipolaser','Cavitacion','Cryolipolysis','Multifunction'))->default('Uncategorized');
             $table->string('mainphoto');
             $table->text('introduction');
