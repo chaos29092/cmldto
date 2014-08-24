@@ -10,14 +10,14 @@
 <table class="table-striped table">
     <tr>
         <th>Name</th>
-        <th>Is_discount</th>
+        <th>Category</th>
         <th>Modified</th>
         <th>Operation</th>
     </tr>
     @foreach($products as $product)
     <tr>
         <td>{{ $product->name }}</td>
-        <td>{{ $product->is_discount }}</td>
+        <td>{{ $product->category }}</td>
         <td>{{ $product->updated_at }}</td>
         <td><a href="{{asset('admin/products/'.$product->id.'/edit')}}">
                 <button type="button" class="btn btn-primary">Edit</button>

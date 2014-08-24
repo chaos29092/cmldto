@@ -12,6 +12,16 @@
     <input name="name" type="text" class="form-control" id="name">
 </div>
 
+{{--产品分类--}}
+<div class="form-group">
+    <label for="category">产品分类</label>
+    {{ Form::select('category',
+    array( 'Uncategorized' => 'Uncategorized', 'E-Light' => 'E-Light','Nd-Yag Laser' => 'Nd-Yag Laser', 'IPL' => 'IPL',
+    'Diode Laser'=>'Diode Laser','CO2 Laser Fractional'=>'CO2 Laser Fractional','RF'=>'RF','Lipolaser'=>'Lipolaser','Cavitacion'=>'Cavitacion','Cryolipolysis'=>'Cryolipolysis',
+    'Multifunction'=>'Multifunction'),
+    $product->category) }}
+</div>
+
 {{--主图--}}
 <div class="form-group">
     <label for="mainphoto">页幕主图,要求背景透明，500宽</label>
@@ -81,33 +91,27 @@
     <input name="indexphoto" type="file" id="indexphoto">
 </div>
 
-{{--price---}}
-<div class="form-group">
-    <label for="price">价格</label>
-    <input name="price" type="text" class="form-control" id="price" value="{{$product->price}}">
-</div>
-
 {{--mrg---}}
 <div class="form-group">
-    <label for="mrg">主要功能，以 | 来分隔</label>
-    <textarea name="mrg" class="form-control" id="mrg" rows="3">{{$product->mrg}}</textarea>
+    <label for="mrg">主要功能，用于首页</label>
+    <textarea name="mrg" class="form-control" id="mrg" rows="2">{{$product->mrg}}</textarea>
 </div>
 
 {{--miniintro---}}
 <div class="form-group">
-    <label for="miniintro">简介</label>
+    <label for="miniintro">简介，用于首页</label>
     <textarea name="miniintro" class="form-control" id="miniintro" rows="4">{{$product->miniintro}}</textarea>
 </div>
 
 {{--fnt---}}
 <div class="form-group">
-    <label for="fnt">适用于诊所，美容院等，也可以写一些自己想写的</label>
+    <label for="fnt">适用于诊所，美容院等，也可以写一些自己想写的，用于首页</label>
     <input name="fnt" type="text" class="form-control" id="fnt" value="{{$product->fnt}}">
 </div>
 
 {{--style---}}
 <div class="form-group">
-    <label for="style">立式or台式</label>
+    <label for="style">立式or台式，用于首页</label>
     <input name="style" type="text" class="form-control" id="style" value="{{$product->style}}">
 </div>
 
