@@ -29,9 +29,9 @@ class CreateProducts extends Migration {
             $table->text('tocustomer');
             $table->string('footerphoto');
             $table->string('indexphoto');
-            $table->string('mrg');
+            $table->string('mrg')->default('<li>app1</li><li style="list-style: none">|</li><li>app2</li><li style="list-style: none">|</li><li>app3</li>');
             $table->string('miniintro');
-            $table->string('fnt');
+            $table->string('fnt')->default('Suitable for hospital, beauty salons, clinics,etc...');
             $table->string('style');
             $table->timestamps();
         });

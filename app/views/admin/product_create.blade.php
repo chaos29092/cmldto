@@ -87,32 +87,32 @@
 
 {{--indexphoto--}}
 <div class="form-group">
-    <label for="indexphoto">首页产品缩略图，180X135</label>
+    <label for="indexphoto">首页产品缩略图，180X135比例</label>
     <input name="indexphoto" type="file" id="indexphoto">
 </div>
 
 {{--mrg---}}
 <div class="form-group">
     <label for="mrg">主要功能，用于首页</label>
-    <textarea name="mrg" class="form-control" id="mrg" rows="2">{{$product->mrg}}</textarea>
+    <textarea name="mrg" class="form-control" id="mrg" rows="2"><li>app1</li><li style="list-style: none">|</li><li>app2</li><li style="list-style: none">|</li><li>app3</li></textarea>
 </div>
 
 {{--miniintro---}}
 <div class="form-group">
-    <label for="miniintro">简介，用于首页</label>
+    <label for="miniintro">简介，用于首页，2~3行较好</label>
     <textarea name="miniintro" class="form-control" id="miniintro" rows="4">{{$product->miniintro}}</textarea>
 </div>
 
 {{--fnt---}}
 <div class="form-group">
-    <label for="fnt">适用于诊所，美容院等，也可以写一些自己想写的，用于首页</label>
+    <label for="fnt">适用于诊所，美容院等，也可以写一些自己想写的，用于首页,不要太多</label>
     <input name="fnt" type="text" class="form-control" id="fnt" value="{{$product->fnt}}">
 </div>
 
 {{--style---}}
 <div class="form-group">
     <label for="style">立式or台式，用于首页</label>
-    <input name="style" type="text" class="form-control" id="style" value="{{$product->style}}">
+    <input name="style" type="text" class="form-control" id="style">
 </div>
 
 {{Form::submit('Create', array('class' => 'btn btn-default'))}}

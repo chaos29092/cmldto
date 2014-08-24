@@ -196,6 +196,12 @@
 <div class="container-fluid">
     <div class="container container-pad" id="property-listings">
         <div class="row">
+            <div class="col-md-12">
+                <h1>Discount Products</h1>
+                <p>Product list doing promotional activities!</p>
+            </div>
+        </div>
+        <div class="row">
             @foreach($products as $product)
             <div class="col-sm-6">
                 <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">

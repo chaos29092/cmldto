@@ -13,7 +13,7 @@
 Route::model('product', 'Product');
 
 Route::get('/', function () {
-    $date['products'] = Product::where('id','>', 0)->orderBy('id','desc')->get(array('id','category','name','indexphoto','mrg','miniintro','fnt','style'));
+    $date['products'] = Product::take(20)->where('id','>', 0)->orderBy('id','desc')->get(array('id','category','name','indexphoto','mrg','miniintro','fnt','style'));
     return View::make('index',$date);
 });
 
