@@ -168,23 +168,22 @@
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="http://placehold.it/1200x400" alt="...">
+                <img src="{{asset('img/slide_1.jpg')}}" alt="Beauty Equipment">
 
                 <div class="carousel-caption">
-                    ...
+
                 </div>
             </div>
             <div class="item">
-                <img src="http://placehold.it/1200x400" alt="...">
+                <img src="{{asset('img/slide_2.jpg')}}" alt="Beauty Equipment">
 
                 <div class="carousel-caption">
-                    ...
+
                 </div>
             </div>
         </div>

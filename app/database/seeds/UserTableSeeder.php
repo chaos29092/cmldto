@@ -4,7 +4,7 @@ class UserTableSeeder extends Seeder {
 
     public function run()
     {
-        User::create(array('password' => Hash::make('wo94yun'), 'username' => 'chaos', 'is_admin' => 'true'));
+        User::create(array('password' => Hash::make('camellia520'), 'username' => 'camellia', 'is_admin' => 'true'));
     }
 
 }
