@@ -17,7 +17,8 @@
     <label for="category">产品分类</label>
     {{ Form::select('category',
     array( 'Uncategorized' => 'Uncategorized', 'E-Light' => 'E-Light','Nd-Yag Laser' => 'Nd-Yag Laser', 'IPL' => 'IPL',
-    'Diode Laser'=>'Diode Laser','CO2 Laser Fractional'=>'CO2 Laser Fractional','RF'=>'RF','Lipolaser'=>'Lipolaser','Cavitacion'=>'Cavitacion','Cryolipolysis'=>'Cryolipolysis',
+    'Diode Laser'=>'Diode Laser','CO2 Laser Fractional'=>'CO2 Laser
+    Fractional','RF'=>'RF','Lipolaser'=>'Lipolaser','Cavitacion'=>'Cavitacion','Cryolipolysis'=>'Cryolipolysis',
     'Multifunction'=>'Multifunction'),
     $product->category) }}
 </div>
@@ -39,7 +40,26 @@
 {{--introduction--}}
 <div class="form-group">
     <label for="introduction">Introduction</label>
-    <textarea name="introduction" class="form-control" id="introduction" rows="6"></textarea>
+    <textarea name="introduction" class="form-control" id="introduction" rows="6">
+        {{--Introduction Content Begin--}}
+        <h1>标题</h1>
+        <p>标题下方简单的1,2行</p>
+        <p>
+            <small>大幅内容，例：Somos una fabrica profesional de máquina estética en China, Ahora, hay una gran promoción en
+                IPL (máquina de depilación), sólo en julio y agosto!!!! El precio local de IPL es € 4-5000,
+                ahora con precio de descuento, está sólo € 1400. Es ventas locas!!! Póngase en contacto con
+                nosotros ahora mismo y no te pierdas el descuento increíble!
+            </small>
+        </p>
+        <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-success"> 价格，例：€ 1400.00</button>
+            <button type="button" class="btn btn-success"> Contáctenos</button>
+        </div>
+        <p>
+            <small>按钮下方小提示：Promo Only en septiembre y octubre.</small>
+        </p>
+        {{--Introduction Content End--}}
+    </textarea>
 </div>
 
 {{--appphoto--}}
@@ -51,13 +71,41 @@
 {{--app--}}
 <div class="form-group">
     <label for="app">App</label>
-    <textarea name="app" class="form-control" id="app" rows="6"></textarea>
+    <textarea name="app" class="form-control" id="app" rows="6">
+        {{--App Content Begin--}}
+        <h2>Aplicaciones</h2>
+
+        <p><em>app标题下方斜体字：El tratamiento de depilación láser puede hacer que un amplio espectro de luz pulsada intensa a través
+                de una pequeña pieza de mano, suave.</em></p>
+        <ol>
+            <li><p>功能1;</p></li>
+            <li><p>功能2;</p></li>
+            <li><p>功能3;</p></li>
+            <li><p>功能4;</p></li>
+            <li><p>功能5;;</p></li>
+            <li><p>更多功能可按此结构继续列出</p></li>
+        </ol>
+        {{--App Content End--}}
+    </textarea>
 </div>
 
 {{--advantage--}}
 <div class="form-group">
     <label for="advantage">Advantage</label>
-    <textarea name="advantage" class="form-control" id="advantage" rows="6"></textarea>
+    <textarea name="advantage" class="form-control" id="advantage" rows="6">
+        {{--Advantage Content Begin--}}
+        <h2>Advantage</h2>
+        <p><em>advantage下方的斜体字.</em></p>
+        <ol>
+            <li><p>优势1;</p></li>
+            <li><p>优势2;</p></li>
+            <li><p>优势3;</p></li>
+            <li><p>优势4;</p></li>
+            <li><p>优势5;;</p></li>
+            <li><p>更多优势可按此结构继续列出</p></li>
+        </ol>
+        {{--Advantage Content Begin--}}
+    </textarea>
 </div>
 
 {{--adphoto_1--}}
@@ -84,7 +132,17 @@
 {{--tocustomer---}}
 <div class="form-group">
     <label for="tocustomer">Tocustomer</label>
-    <textarea name="tocustomer" class="form-control" id="tocustomer" rows="6"></textarea>
+    <textarea name="tocustomer" class="form-control" id="tocustomer" rows="6">
+        {{--Tocustomer Content Begin--}}
+        <h2>Palabras del Camellia</h2>
+        <p>hola, soy administrador de clientes, Elena.</p>
+        <p>Queremos hacer más socios de negocios de todo el mundo, así que estábamos locos promociones.</p>
+        <p>Promo Only en septiembre y octubre~.</p>
+        <p>No te pierdas esta oportunidad, queremos ser tu amigo.</p>
+        <p>Por favor, póngase en contacto con nosotros tan pronto como sea posible.</p>
+        <p>Esperamos su mensaje!</p>
+        {{--Tocustomer Content End--}}
+    </textarea>
 </div>
 
 {{--footerphoto--}}
@@ -101,26 +159,32 @@
 
 {{--mrg---}}
 <div class="form-group">
-    <label for="mrg">主要功能，用于首页</label>
-    <textarea name="mrg" class="form-control" id="mrg" rows="2"><li>app1</li><li style="list-style: none">|</li><li>app2</li><li style="list-style: none">|</li><li>app3</li></textarea>
+    <label for="mrg">主要功能，用于首页简介,最好一个单词描述一个功能</label>
+    <textarea name="mrg" class="form-control" id="mrg" rows="2">
+        <li>功能1</li>
+        <li style="list-style: none">|</li>
+        <li>功能2</li>
+        <li style="list-style: none">|</li>
+        <li>功能3，更多功能复制该结构</li>
+    </textarea>
 </div>
 
 {{--miniintro---}}
 <div class="form-group">
-    <label for="miniintro">简介，用于首页，2~3行较好</label>
+    <label for="miniintro">机器简介，用于首页，自己总结或查资料，让客户看了就想点进来看看，3行左右较好</label>
     <textarea name="miniintro" class="form-control" id="miniintro" rows="4">{{$product->miniintro}}</textarea>
 </div>
 
 {{--fnt---}}
 <div class="form-group">
-    <label for="fnt">适用于诊所，美容院等，也可以写一些自己想写的，用于首页,不要太多</label>
-    <input name="fnt" type="text" class="form-control" id="fnt" value="{{$product->fnt}}">
+    <label for="fnt">简介下方灰色字体，可以写适用于诊所，美容院等，也可以写一些自己想写的，用于首页,不要太多</label>
+    <input name="fnt" type="text" class="form-control" id="fnt" value="Suitable for Beauty Hospital，Clinics, Beauty Salons">
 </div>
 
 {{--style---}}
 <div class="form-group">
     <label for="style">立式or台式，用于首页</label>
-    <input name="style" type="text" class="form-control" id="style">
+    <input name="style" type="text" class="form-control" id="style" value="Vertical">
 </div>
 
 {{Form::submit('Create', array('class' => 'btn btn-default'))}}
