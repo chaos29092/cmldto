@@ -540,12 +540,12 @@
     <div class="col-md-4">
 
         <ul class="list-inline">
-            <li><a href="/">Index</a></li>
-            <li><a href="{{asset('products')}}">All Products</a></li>
+            <li><a href="/">Indice</a></li>
+            <li><a href="{{asset('products')}}">Todos Los Productos</a></li>
         </ul>
     </div>
     <div class="col-md-8">
-        <p class="text-right">© Camellia 2014 All rights reserved.</p>
+        <p class="text-right">©  Camellia 2014 Todos los derechos reservados.</p>
     </div>
 </div>
 {{--footer结束--}}

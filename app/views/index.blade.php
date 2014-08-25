@@ -253,7 +253,7 @@
 <div id="contact">
     <div class="container">
         <div class="col-md-offset-1">
-            <h2>Contact</h2>
+            <h2>Contáctenos</h2>
         </div>
         {{ Form::open(array('url' => 'products/inquiry', 'class' => 'form-horizontal', 'role' => 'form' )) }}
         <div class="form-group">
