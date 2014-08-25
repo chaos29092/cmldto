@@ -14,7 +14,7 @@
 
 {{--是否促销 is_discount--}}
 <div class="form-group">
-    <label for="is_discount">是否促销,放在首页，最多20个</label>
+    <label for="is_discount">是否促销,选择是的话，该产品会被放在首页，最多20个</label>
     {{ Form::select('is_discount',
     array( '1' => 'yes', '0' => 'no'),
     $product->is_discount) }}
@@ -114,7 +114,7 @@
 
 {{--tocustomer---}}
 <div class="form-group">
-    <label for="tocustomer">Tocustomer</label>
+    <label for="tocustomer">给客户的话，有更好的就修改，没有就这样</label>
     <textarea name="tocustomer" class="form-control" id="tocustomer" rows="6">{{$product->tocustomer}}</textarea>
 </div>
 
@@ -142,19 +142,19 @@
 
 {{--mrg---}}
 <div class="form-group">
-    <label for="mrg">主要功能，用于首页</label>
+    <label for="mrg">主要功能，用于首页简介,最好一个单词描述一个功能</label>
     <textarea name="mrg" class="form-control" id="mrg" rows="2">{{$product->mrg}}</textarea>
 </div>
 
 {{--miniintro---}}
 <div class="form-group">
-    <label for="miniintro">简介，用于首页</label>
+    <label for="miniintro">机器简介，用于首页，自己总结或查资料，让客户看了就想点进来看看，3行左右较好</label>
     <textarea name="miniintro" class="form-control" id="miniintro" rows="4">{{$product->miniintro}}</textarea>
 </div>
 
 {{--fnt---}}
 <div class="form-group">
-    <label for="fnt">适用于诊所，美容院等，也可以写一些自己想写的，用于首页</label>
+    <label for="fnt">简介下方灰色字体，可以写适用于诊所，美容院等，也可以写一些自己想写的，用于首页,不要太多</label>
     <input name="fnt" type="text" class="form-control" id="fnt" value="{{$product->fnt}}">
 </div>
 

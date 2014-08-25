@@ -25,7 +25,7 @@
 
 {{--是否促销 is_discount--}}
 <div class="form-group">
-    <label for="is_discount">是否促销,放在首页，最多20个</label>
+    <label for="is_discount">是否促销,选择是的话，该产品会被放在首页，最多20个</label>
     {{ Form::select('is_discount',
     array( '1' => 'yes', '0' => 'no'),
     $product->is_discount) }}
@@ -131,7 +131,7 @@
 
 {{--tocustomer---}}
 <div class="form-group">
-    <label for="tocustomer">Tocustomer</label>
+    <label for="tocustomer">给客户的话，有更好的就修改，没有就这样</label>
     <textarea name="tocustomer" class="form-control" id="tocustomer" rows="6">
         {{--Tocustomer Content Begin--}}
         <h2>Palabras del Camellia</h2>
