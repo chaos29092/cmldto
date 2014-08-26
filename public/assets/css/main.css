@@ -316,14 +316,7 @@ a {
 
 /*Product list end */
 
-/*carousel*/
-#carousel {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-#nav .navbar-default {
-    background-color: #fcfcfc;
+/*navbar*/
+#nav .navbar {
     margin-bottom: 0;
-    border: none;
 }

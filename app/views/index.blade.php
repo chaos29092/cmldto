@@ -51,8 +51,7 @@
         <div class="collapse navbar-collapse js-navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown mega-dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Products<span
-                            class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Products <span class="caret"></span></a>
 
                     <ul class="dropdown-menu mega-dropdown-menu row">
                         <li class="col-sm-3">
@@ -163,7 +162,7 @@
 {{--Mega menu end--}}
 
 {{--Carousel begin--}}
-<div id="carousel" class="container-fluid">
+<div id="carousel" class="container">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -174,14 +173,14 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="{{asset('img/slide_1.jpg')}}" alt="Beauty Equipment">
+                <img src="{{asset('img/slide_1.jpg')}}" alt="Beauty Equipment" class="img-rounded">
 
                 <div class="carousel-caption">
 
                 </div>
             </div>
             <div class="item">
-                <img src="{{asset('img/slide_2.jpg')}}" alt="Beauty Equipment">
+                <img src="{{asset('img/slide_2.jpg')}}" alt="Beauty Equipment" class="img-rounded">
 
                 <div class="carousel-caption">
 
