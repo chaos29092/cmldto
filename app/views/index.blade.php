@@ -51,7 +51,7 @@
         <div class="collapse navbar-collapse js-navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown mega-dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Products <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nuestros Productos <span class="caret"></span></a>
 
                     <ul class="dropdown-menu mega-dropdown-menu row">
                         <li class="col-sm-3">
@@ -206,8 +206,8 @@
     <div class="container container-pad" id="property-listings">
         <div class="row">
             <div class="col-md-12">
-                <h1>Discount Products</h1>
-                <p>Product list doing promotional activities!</p>
+                <h1>Los Productos con Descuento</h1>
+                <p>Lista de productos haciendo actividades de promoción!</p>
             </div>
         </div>
         <div class="row">
