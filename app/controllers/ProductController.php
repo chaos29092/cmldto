@@ -1,6 +1,17 @@
 <?php
 
 class ProductController extends BaseController {
+    //index discount products
+    public function index()
+    {
+        if(!Cache::has('indexProducts'))
+        {
+            $date['products'] = Product::take(20)->where('is_discount','=', 1)->orderBy('id','desc')->get(array('id','category','name','indexphoto','mrg','miniintro','fnt','style'));
+            Cache::forever('indexProducts',$date);
+        }
+        return View::make('index',Cache::get('indexProducts'));
+    }
+
     //prodcut page
     public function dicountPage($product)
     {
@@ -10,7 +21,7 @@ class ProductController extends BaseController {
         return View::make('product_master', $date);
     }
 
-    //products list
+    //All products list
     public function all()
     {
         $date['products'] = Product::orderBy('id','desc')->paginate(20,array('id','category','name','indexphoto','mrg','miniintro','fnt','style'));
@@ -98,6 +109,9 @@ class ProductController extends BaseController {
                 Input::file('indexphoto')->move('img/product/'.Input::get('name'),$fileName);
                 $product->update(array('indexphoto'=> $fileName));
             }
+            //flush index products cache
+            $date['products'] = Product::take(20)->where('is_discount','=', 1)->orderBy('id','desc')->get(array('id','category','name','indexphoto','mrg','miniintro','fnt','style'));
+            Cache::forever('indexProducts',$date);
 
         return Redirect::to('admin/products/'.$product->id.'/edit')
             ->with('message', 'Successfully created product!');
@@ -185,6 +199,9 @@ class ProductController extends BaseController {
 
         //update all date except image.
         $product->update(Input::except(array('mainphoto','appphoto','adphoto_1','adphoto_2','adphoto_3','adphoto_4','footerphoto','indexphoto')));
+        //flush index products cache
+        $date['products'] = Product::take(20)->where('is_discount','=', 1)->orderBy('id','desc')->get(array('id','category','name','indexphoto','mrg','miniintro','fnt','style'));
+        Cache::forever('indexProducts',$date);
         return Redirect::back()
             ->with('message', 'Successfully updated product!');
     }
@@ -199,6 +216,9 @@ class ProductController extends BaseController {
     public function delete(Product $product)
     {
         $product->delete();
+        //flush index products cache
+        $date['products'] = Product::take(20)->where('is_discount','=', 1)->orderBy('id','desc')->get(array('id','category','name','indexphoto','mrg','miniintro','fnt','style'));
+        Cache::forever('indexProducts',$date);
         return Redirect::to('admin/products')
             ->with('message','Successfully deleted product!');
     }
